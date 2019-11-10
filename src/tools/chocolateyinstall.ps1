@@ -10,7 +10,7 @@ end
 
     if ($PSVersionTable.PSVersion.Major -ge 5)
     {
-        $manifestFile    = Join-Path -Path $sourceDirectory -ChildPath helloworld.psd1
+        $manifestFile    = Join-Path -Path $sourceDirectory -ChildPath PowerModule.psm1
         $manifest        = Test-ModuleManifest -Path $manifestFile -WarningAction Ignore -ErrorAction Stop
         $targetDirectory = Join-Path -Path $targetDirectory -ChildPath $manifest.Version.ToString()
     }
