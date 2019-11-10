@@ -4,13 +4,13 @@ param ( )
 end
 {
     $modulePath      = Join-Path -Path $env:ProgramFiles -ChildPath WindowsPowerShell\Modules
-    $targetDirectory = Join-Path -Path $modulePath -ChildPath ArtifactVerification
+    $targetDirectory = Join-Path -Path $modulePath -ChildPath PowershellDemo
     $scriptRoot      = Split-Path -Path $MyInvocation.MyCommand.Path -Parent
     $sourceDirectory = Join-Path -Path $scriptRoot -ChildPath Module
 
     if ($PSVersionTable.PSVersion.Major -ge 5)
     {
-        $manifestFile    = Join-Path -Path $sourceDirectory -ChildPath powershelldemo.psd1
+        $manifestFile    = Join-Path -Path $sourceDirectory -ChildPath PowershellDemo.psd1
         $manifest        = Test-ModuleManifest -Path $manifestFile -WarningAction Ignore -ErrorAction Stop
         $targetDirectory = Join-Path -Path $targetDirectory -ChildPath $manifest.Version.ToString()
     }
