@@ -2,8 +2,12 @@
  # A Simple Module
  function Get-Info
 {
-    param($Computername)
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]    
+        [string]$Computername = $Global:Computername
+        )
     Get-wmiObject -Computername $Computername -Class Win32_BIOS
 }
 
-Get-Info -Computername localhost
+Export-ModuleMember -Function Get-Info
