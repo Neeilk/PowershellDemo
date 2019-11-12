@@ -4,9 +4,11 @@
 {
     [CmdletBinding()]
     param(
-        [Parameter(Mandatory = $true)]    
-        [string]$Computername = $Global:Computername
+        [Parameter(Position = 1)]    
+        [string]$Computername 
         )
+
+    $Computername = $Global:Computername
     Get-wmiObject -Computername $Computername -Class Win32_BIOS
 }
 
