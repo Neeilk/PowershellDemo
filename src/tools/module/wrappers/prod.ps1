@@ -1,4 +1,4 @@
-function Global:prompt {"PROD | DemoModule>"} 
+function Global:prompt {"PROD | PowershellDemo>"} 
 
 $Global:Staging = $false
 $Global:ActionParallelism = 3

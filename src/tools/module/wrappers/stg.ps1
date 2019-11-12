@@ -1,4 +1,4 @@
-function Global:prompt {"STG | DemoModule>"} 
+function Global:prompt {"STG | PowershellDemo>"} 
 
 $Global:Staging = $true
 $Global:ActionParallelism = 5
@@ -6,7 +6,7 @@ $Global:Timeout = 30
 $Global:NoPrompt = $false
 $Global:RunChecks = $true
 $Global:SlwIntegration = $false
-Set-Variable -Name "Computername" -Value localhost -Scope Globa
+Set-Variable -Name "Computername" -Value localhost
 
 Import-Module DemoModule
 $Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Gray')
