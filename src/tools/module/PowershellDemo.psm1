@@ -8,7 +8,11 @@
         [string]$Computername 
         )
 
-    $Computername = $Global:Computername
+    if(($Computername -ne $null) -or ($Computername -ne ""))
+    {
+        $Computername = $Global:Computername
+    }
+    
     Get-wmiObject -Computername $Computername -Class Win32_BIOS
 }
 
