@@ -39,8 +39,8 @@ try {
 	#		Get-UserParameterChoices -Parameters $requiredParameters
 	Write-Host "This is where you prompt user to enter default param values :"
 	Get-Variable -Name "Computername" -Scope Global -ErrorAction SilentlyContinue
-	Set-Variable -Name "Computername" -Value localhost
-	Get-Variable -Name "Computername" -Scope Global -ErrorAction SilentlyContinue
+	#Set-Variable -Name "Computername" -Value localhost
+	#Get-Variable -Name "Computername" -Scope Global -ErrorAction SilentlyContinue
 	
 	}
 	else {

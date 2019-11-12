@@ -48,7 +48,7 @@ end
             New-Item -Path $devopsFolder -ItemType Directory | Out-Null
             Set-FolderIcon -Icon $devopsIcon -Path $devopsFolder
         }
-        $desktopFolder = "$($devopsFolder)\EDB Interface"
+        $desktopFolder = "$($devopsFolder)\PowershellDemo"
         $icon = "$($targetDirectory)\icons\devops.ico"
         if (!(Test-Path $desktopFolder)) {
             "Creating desktop folder for shortcuts..." | Out-Host

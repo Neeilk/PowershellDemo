@@ -8,7 +8,7 @@
         [string]$Computername 
         )
 
-    if(($Computername -ne $null) -or ($Computername -ne ""))
+    if(($Computername -eq $null) -or ($Computername -eq ""))
     {
         $Computername = $Global:Computername
     }
