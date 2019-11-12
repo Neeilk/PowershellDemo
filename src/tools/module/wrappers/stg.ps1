@@ -6,6 +6,7 @@ $Global:Timeout = 30
 $Global:NoPrompt = $false
 $Global:RunChecks = $true
 $Global:SlwIntegration = $false
+Set-Variable -Name "Computername" -Value localhost -Scope Globa
 
 Import-Module DemoModule
 $Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Gray')
