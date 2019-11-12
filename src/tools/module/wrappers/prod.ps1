@@ -7,7 +7,7 @@ $Global:NoPrompt = $false
 $Global:RunChecks = $true
 $Global:SlwIntegration = $false
 
-Import-Module DemoModule
+Import-Module PowershellDemo
 $Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Black')
 $Host.UI.RawUI.ForegroundColor = 'Green'
 $Host.PrivateData.ErrorForegroundColor = 'Red'

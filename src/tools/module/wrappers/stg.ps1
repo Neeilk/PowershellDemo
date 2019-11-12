@@ -8,7 +8,7 @@ $Global:RunChecks = $true
 $Global:SlwIntegration = $false
 Set-Variable -Name "Computername" -Value localhost
 
-Import-Module DemoModule
+Import-Module PowershellDemo
 $Host.UI.RawUI.BackgroundColor = ($bckgrnd = 'Gray')
 $Host.UI.RawUI.ForegroundColor = 'Blue'
 $Host.PrivateData.ErrorForegroundColor = 'Red'
