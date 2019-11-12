@@ -48,13 +48,6 @@ end
             New-Item -Path $devopsFolder -ItemType Directory | Out-Null
             Set-FolderIcon -Icon $devopsIcon -Path $devopsFolder
         }
-        $desktopFolder = "$($devopsFolder)\InterfaceModule"
-        $icon = "$($targetDirectory)\icons\folder.ico"
-        if (!(Test-Path $desktopFolder)) {
-            "Creating desktop folder for shortcuts..." | Out-Host
-            New-Item -Path $desktopFolder -ItemType Directory | Out-Null
-            Set-FolderIcon -Icon $icon -Path $desktopFolder
-        }
         $psPath = "$($ENV:SystemRoot)\system32\WindowsPowerShell\v1.0\powershell.exe"
         $prodLink = "$($desktopFolder)\PROD.lnk"
         $prodTarget = "$($targetDirectory)\wrappers\prod.ps1"
@@ -73,15 +66,6 @@ end
             $t = New-Shortcut -Path $stgLink -TargetPath $psPath -admin -Icon $stgIcon `
                 -Description "Launches EdbInterface with link to STG EDB." `
                 -Arguments "-NoExit -File `"$($stgTarget)`"" -Verbose
-        }
-        $devLink = "$($desktopFolder)\DEV.lnk"
-        $devTarget = "$($targetDirectory)\wrappers\dev.ps1"
-        $devIcon = "$($targetDirectory)\icons\DEV.ico"
-        if (!(Test-Path $devLink)) {
-            "Creating DEV shortcut..." | Out-Host
-            $t = New-Shortcut -Path $devLink -TargetPath $psPath -admin -Icon $devIcon `
-                -Description "Launches EdbInterface with link to DEV EDB." `
-                -Arguments "-NoExit -File `"$($devTarget)`"" -Verbose
         }
     }
 }
