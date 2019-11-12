@@ -42,7 +42,7 @@ end
     if ([Environment]::UserInteractive) {
         # setup shortcuts
         $devopsFolder = "$($ENV:Public)\desktop\DevOps Modules"
-        $devopsIcon = "$($targetDirectory)\icons\devops.ico"
+        $devopsIcon = "$($targetDirectory)\icons\folder.ico"
         if (!(Test-Path $devopsFolder)) {
             "Creating DevOps tools folder..." | Out-Host
             New-Item -Path $devopsFolder -ItemType Directory | Out-Null
@@ -66,6 +66,15 @@ end
             $t = New-Shortcut -Path $stgLink -TargetPath $psPath -admin -Icon $stgIcon `
                 -Description "Launches EdbInterface with link to STG EDB." `
                 -Arguments "-NoExit -File `"$($stgTarget)`"" -Verbose
+        }
+        $devLink = "$($desktopFolder)\DEV.lnk"
+        $devTarget = "$($targetDirectory)\wrappers\dev.ps1"
+        $devIcon = "$($targetDirectory)\icons\DEV.ico"
+        if (!(Test-Path $devLink)) {
+            "Creating DEV shortcut..." | Out-Host
+            $t = New-Shortcut -Path $devLink -TargetPath $psPath -admin -Icon $devIcon `
+                -Description "Launches EdbInterface with link to DEV EDB." `
+                -Arguments "-NoExit -File `"$($devTarget)`"" -Verbose
         }
     }
 }
